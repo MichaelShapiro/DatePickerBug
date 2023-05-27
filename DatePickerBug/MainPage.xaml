@@ -4,16 +4,28 @@
              x:Class="DatePickerBug.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout x:Name="vvv"
+        <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Button Text="from 4/20 to 4/29" Clicked="Button_Clicked"/>
-            
-            <Button Text="from 2/13 to 2/18" Clicked="Button_Clicked_1"/>
+            <Button Text="Set range from  2/13/23  to  2/18/23" Clicked="Button_Clicked_1"/>
 
             <DatePicker x:Name="bigBug"/>
+
+            <HorizontalStackLayout
+                Spacing="20">
+                
+                <Label Text="MinimumDate"/>
+                <Label Text="{Binding MinimumDate, Source={x:Reference bigBug}, StringFormat='{0:yyyy-MM-dd}'}"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Spacing="20">
+                
+                <Label Text="MaximumDate"/>
+                <Label Text="{Binding MaximumDate, Source={x:Reference bigBug}, StringFormat='{0:yyyy-MM-dd}'}"/>
+            </HorizontalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>
